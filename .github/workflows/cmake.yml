@@ -23,7 +23,7 @@ jobs:
     - name: Build for Win32
       working-directory: ${{github.workspace}}/build.win32
       shell: bash
-      run: cmake --build .
+      run: cmake --build --target=Release .
 
     - name: Create Build Workspace for x64
       run: cmake -E make_directory ${{github.workspace}}/build.x64
@@ -36,7 +36,7 @@ jobs:
     - name: Build for Win64
       working-directory: ${{github.workspace}}/build.x64
       shell: bash
-      run: cmake --build .
+      run: cmake --build --target=Release .
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
