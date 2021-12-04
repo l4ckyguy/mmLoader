@@ -59,16 +59,9 @@ jobs:
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build .
 
-    - name: Upload x86
+    - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
-          name: x86
-          path: ${{github.workspace}}/build.win32
+          name: output
+          path: ${{github.workspace}}/output
           
-    - name: Upload x64
-      uses: actions/upload-artifact@v2
-      with:
-          name: x64
-          path: ${{github.workspace}}/build.x64
-          
-      
